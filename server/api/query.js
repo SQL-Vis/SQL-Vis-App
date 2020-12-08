@@ -71,6 +71,7 @@ router.post('/', async (req, res, next) => {
       getJoin(ast, visInfo)
     }
 
+    // You've already called "next" in the above code. What probably should happen is in each "if" statement we set the res.status then next(errorMessage) or use the below res.send in each. If you pass anything into next, Express sees it as an error. You could also use a "throw" in the above code and handle it in the catch
     if (errorMessage) {
       res.status(422)
       res.send({error: errorMessage})

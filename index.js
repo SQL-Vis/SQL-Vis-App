@@ -3,6 +3,10 @@ const path = require('path')
 const express = require('express')
 const api = require('./server/api')
 
+/**
+  Double check that everything here is necessary (urlencoded, and potentially duplicating error middleware). Once you're in the library, dump these into the server/index file
+*/
+
 module.exports = function(db) {
   return compose([
     function(req, res, next) {

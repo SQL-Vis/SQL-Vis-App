@@ -16,6 +16,11 @@ export class QueryHistory extends React.Component {
     this.props.getQueryVis(e.target.value)
     this.props.getResult(e.target.value)
   }
+
+  /** 
+    I would abstract your example SQL statements to some other variable and pass those variables into the value fields below. Or store the value as an index?
+  */
+
   render() {
     return (
       <div className="query-box">
