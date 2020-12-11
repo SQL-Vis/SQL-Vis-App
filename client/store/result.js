@@ -22,7 +22,7 @@ const getResult = result => ({type: GET_RESULT, result})
 
 export const fetchResult = queryStr => async dispatch => {
   try {
-    const {data} = await axios.post('./api/query/result', {query: queryStr})
+    const {data} = await axios.post('/api/query/result', {query: queryStr})
     dispatch(getResult(data))
     // The dispatch below resets the error to none
     dispatch(getDatabaseError({}))

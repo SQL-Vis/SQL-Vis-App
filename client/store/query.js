@@ -23,7 +23,7 @@ const getQueryVis = queryVis => ({type: GET_QUERY_VIS, queryVis})
 
 export const fetchQueryVis = queryStr => async dispatch => {
   try {
-    const {data} = await axios.post('./api/query', {query: queryStr})
+    const {data} = await axios.post('/api/query', {query: queryStr})
     dispatch(getQueryVis(data))
     // The dispatch below resets the error to none
     dispatch(getParserError({}))

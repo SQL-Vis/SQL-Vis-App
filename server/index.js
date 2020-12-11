@@ -2,7 +2,6 @@ const path = require('path')
 const express = require('express')
 const morgan = require('morgan')
 const compression = require('compression')
-const seeql = require('../index') // ADD LINKED FILE HERE
 const db = require('./db')
 const PORT = process.env.PORT || 8080
 const app = express()
@@ -24,19 +23,18 @@ const createApp = () => {
   // logging middleware
   app.use(morgan('dev'))
 
-  // // body parsing middleware
-  // app.use(express.json())
-  // app.use(express.urlencoded({extended: true}))
+  // body parsing middleware
+  app.use(express.json())
+  app.use(express.urlencoded({extended: true}))
 
   // compression middleware
   app.use(compression())
 
-  app.use('/seeql', seeql(db))
   // // auth and api routes
-  // app.use('/api', require('./api'))
+  app.use('/api', require('./api'))
 
-  // // static file-serving middleware
-  // app.use(express.static(path.join(__dirname, '..', 'public')))
+  // static file-serving middleware
+  app.use(express.static(path.join(__dirname, '..', 'public')))
 
   // any remaining requests with an extension (.js, .css, etc.) send 404
   app.use((req, res, next) => {
