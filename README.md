@@ -1,6 +1,6 @@
 # seeQL
 
-This is the repository for the [Heroku-hosted demo](https://seeql-app.herokuapp.com/) of seeQL. seeQL is an npm library that assists developers with building SQL queries by displaying a visualization of a potential query alongside a table of search results. You can access the npm link [here](https://seeql-app.herokuapp.com/).
+This is the repository for the [Heroku-hosted demo](https://seeql-app.herokuapp.com/) of seeQL. seeQL is an npm library that assists developers with building SQL queries by displaying a visualization of a potential query alongside a table of search results. You can access the npm link [here](https://www.npmjs.com/package/seeql-ware).
 
 This demo is set up with a default database that has three tables of data– songs, albums, and artists.
 
